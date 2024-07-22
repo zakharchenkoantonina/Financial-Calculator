@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Taviraj" rel="stylesheet">
+<body id="play">
+  <h1><%=@game.player1.name%> vs. <%=@game.player2.name%><h1>
+  <h3><%=@game.player1.name%> HP: <%=@game.player1.hit_points%></h3>
+  <h3><%=@game.player2.name%> HP: <%=@game.player2.hit_points%></h3>
+
+  <div id="hero">
+    <img src="imgs/<%= @game.player1.name %>.png" alt="">
+  </div>
+
+  <div>
+    <h1>VS</h1>
+  </div>
+
+  <div id="villain">
+    <img src="imgs/<%= @game.player2.name %>.png" alt="">
+  </div>
+
+  <form action="/attack">
+    <label for="Attack">
+      <input type="submit" value="Attack <%=@game.target_player.name%>">
+    </label>
+  </form>
+  <form action="/paralyse">
+    <label for="Paralyse">
+      <input type="submit" value="Paralyse <%=@game.target_player.name%>">
+    </label>
+  </form>
+  <form action="/poison">
+    <label for="Poison">
+      <input type="submit" value="Poison <%=@game.target_player.name%>">
+    </label>
+  </form>
+  <form action="/sleep">
+    <label for="Sleep">
+      <input type="submit" value="Sleep <%=@game.target_player.name%>">
+    </label>
+  </form>
+  <form action="/heal">
+    <label for="Heal">
+      <input type="submit" value="Heal <%=@game.current_player.name%>">
+    </label>
+  </form>
+</body>

@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Taviraj" rel="stylesheet">
+<body>
+  <h1><%=@game.player1.name%> vs. <%=@game.player2.name%></h1>
+  <h3><%=@game.target_player.name%> HP: <%=@game.target_player.hit_points%></h3>
+  <p><%=@game.current_player.name%> attacked <%=@game.target_player.name%></p>
+  <h1>GAME OVER - <%=@game.target_player.name%> has died!<h1>
+  <img src="imgs/<%=@game.target_player.name%>.png" alt="">
+</body>

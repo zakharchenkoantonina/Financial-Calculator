@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Taviraj" rel="stylesheet">
+<body>
+  <h1><%=@game.player1.name%> vs. <%=@game.player2.name%></h1>
+  <h3><%=@target_hp%></h3>
+  <p><%=@last_move%></p>
+
+  <% if @game.auto? %>
+    <h3><%=@next_hp%></h3>
+    <p><%=@next_move%></p>
+  <% end %>
+
+  <% if @game.target_player.missing_turn %>
+    <p><%=@next_move%></p>
+  <% end %>
+
+  <div id="hero">
+    <img src="imgs/<%= @game.player1.name %>.png" alt="">
+  </div>
+
+  <div>
+    <h1>VS</h1>
+  </div>
+
+  <div id="villain">
+    <img src="imgs/<%= @game.player2.name %>.png" alt="">
+  </div>
+
+  <form action="/attack" method="post">
+    <input type="submit" value="OK">
+  </form>
+</body>
